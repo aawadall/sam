@@ -38,11 +38,35 @@ exports.lambdaHandler = async (event, context) => {
 
 exports.anotherHandler = async (event, context) => {
     try {
-        response = {
-            'statusCode': 200,
-            'body' : JSON.stringify({
-                message: 'hello from function <anotherHandler>',
-            })    
+        if (event.httpMethod == 'GET')
+        {
+            response = {
+                'statusCode': 200,
+                'body' : JSON.stringify({
+                    message: 'hello from function <anotherHandler>',
+                    method: 'GET'
+                })    
+            }
+        }
+        else if (event.httpMethod == 'POST' )
+        {
+            response = {
+                'statusCode': 200,
+                'body': JSON.stringify({
+                    method: 'POST'
+                })
+            }
+        }
+        else
+        {
+            response = {
+                'statusCode': 400,
+                'body': JSON.stringify({
+                    messge: 'Unhandled method',
+                    method: event.httpMethod
+                })
+
+            }
         }
     } catch (err) {
         console.error(`Error Mesaage ${err}`);
