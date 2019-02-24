@@ -35,3 +35,19 @@ exports.lambdaHandler = async (event, context) => {
 
     return response
 };
+
+exports.anotherHandler = async (event, context) => {
+    try {
+        response = {
+            'statusCode': 200,
+            'body' : JSON.stringify({
+                message: 'hello from function <anotherHandler>',
+            })    
+        }
+    } catch (err) {
+        console.error(`Error Mesaage ${err}`);
+        return err;
+        
+    }
+    return response;
+}
