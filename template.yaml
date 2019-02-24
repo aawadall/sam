@@ -28,7 +28,7 @@ Resources:
     MyFunction:
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: another-handler/
+            CodeUri: hello-world/
             Handler: app.anotherHandler
             Runtime: nodejs8.10
             Events:
