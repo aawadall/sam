@@ -25,6 +25,18 @@ Resources:
                     Properties:
                         Path: /hello
                         Method: get
+    MyFunction:
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: another-handler/
+            Handler: app.anotherHandler
+            Runtime: nodejs8.10
+            Events:
+                Entry:
+                    Type: Api
+                    Properties:
+                        Path: /myApi
+                        Method: get
 
 Outputs:
 
