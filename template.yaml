@@ -37,6 +37,11 @@ Resources:
                     Properties:
                         Path: /myApi
                         Method: get
+                CRUD:
+                    Type: Api
+                    Properties:
+                        Path: /myApi
+                        Method: post 
 
 Outputs:
 
