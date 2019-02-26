@@ -1,7 +1,7 @@
 language: node_js
 deploy:
-  provider: "lambda"
-  function_name: "lambda-test"
+  provider: lambda
+  function_name: "lambda-alpha"
   region: "us-east-1"
   runtime: "nodejs8.10"
   role: "arn:aws:iam::393057661898:role/sam-app-MyFunctionRole-LQ9Z00HKAJV7"
