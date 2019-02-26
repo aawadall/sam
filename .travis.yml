@@ -1,0 +1,7 @@
+deploy:
+  provider: "lambda"
+  function_name: "lambda-test"
+  region: "us-east-1"
+  runtime: "nodejs8.10"
+  role: "arn:aws:iam::0123456789012:role/lambda_basic_execution"
+  handler_name: "handler"
